@@ -174,4 +174,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial rendering of main categories
     renderMainCategories();
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> Stashed changes
