@@ -174,8 +174,56 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial rendering of main categories
     renderMainCategories();
-<<<<<<< Updated upstream
 });
-=======
+// Function to filter products based on search query
+function filterProducts(query) {
+    const filteredProducts = [];
+    Object.values(productsBySubcategory).forEach(products => {
+        products.forEach(product => {
+            if (product.name.toLowerCase().includes(query.toLowerCase())) {
+                filteredProducts.push(product);
+            }
+        });
+    });
+    return filteredProducts;
+}
+
+// Function to render filtered products
+function renderFilteredProducts(query) {
+    const filteredProducts = filterProducts(query);
+    productContainer.innerHTML = ''; // Clear previous products
+    if (filteredProducts.length > 0) {
+        filteredProducts.forEach(product => {
+            const div = document.createElement('div');
+            div.className = 'grid-item';
+            div.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>Price: ${product.price}</p>
+                <button class="addToCartButton">Add to Cart</button>
+            `;
+            const addToCartButton = div.querySelector('.addToCartButton');
+            addToCartButton.addEventListener('click', function() {
+                addToCart(product);
+            });
+            productContainer.appendChild(div);
+        });
+    } else {
+        productContainer.innerHTML = '<p>No matching products found</p>';
+    }
+}
+
+// Event listener for search input
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value.trim();
+    if (query !== '') {
+        renderFilteredProducts(query);
+    } else {
+        // If search input is empty, render main categories
+        if (currentCategory === null) {
+            renderMainCategories();
+        } else {
+            renderProducts(currentCategory);
+        }
+    }
 });
->>>>>>> Stashed changes
