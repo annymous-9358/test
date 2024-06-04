@@ -1,0 +1,264 @@
+/* General Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: lavender;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+/* Header Styles */
+
+header {
+    background: black;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .logo {
+    float: left;
+}
+
+header nav {
+    float: right;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: rgb(236, 236, 236);
+    text-decoration: none;
+}
+
+
+/* Banner Styles */
+
+.banner {
+    background-color: gray;
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+/* Product Styles */
+
+.products {
+    padding: 40px 0;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: #555;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-controls button {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.slider-controls button:hover {
+    background: #555;
+}
+
+
+/* Vendor Styles */
+
+.vendors {
+    padding: 40px 0;
+    background: #f4f4f4;
+}
+
+.vendors .vendor-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.vendors .vendor {
+    flex: 1 1 calc(33.333% - 40px);
+    text-align: center;
+}
+
+.vendors .vendor img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+/* Footer Styles */
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* Cart Modal Styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* New Arrival Carousel Styles */
+
+.new-arrivals {
+    padding: 40px 0;
+}
+
+.new-arrivals-carousel {
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.new-arrivals .product {
+    flex: 0 0 calc(25% - 20px);
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.new-arrivals .product-info {
+    position: relative;
+}
+
+.new-arrivals .product img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.new-arrivals .product:hover img {
+    transform: scale(1.1);
+}
+
+.new-arrivals .add-to-cart-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.new-arrivals .product:hover .add-to-cart-btn {
+    opacity: 1;
+}
+
+.new-arrivals-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.new-arrivals-controls button {
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.new-arrivals-slide-number {
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
